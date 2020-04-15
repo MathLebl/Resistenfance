@@ -1,0 +1,2 @@
+<%= @audio_message.description %>
+<%= audio_tag rails_blob_path(@audio_message.audio_file), controls: true, preload: "none" %>
