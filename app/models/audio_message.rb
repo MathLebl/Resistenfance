@@ -1,4 +1,4 @@
 class AudioMessage < ApplicationRecord
   belongs_to :user
-  has_many_attached :audio_file
+  has_one_attached :audio_file
 end

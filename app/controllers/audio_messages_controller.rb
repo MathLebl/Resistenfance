@@ -28,6 +28,6 @@ class AudioMessagesController < ApplicationController
   end
 
   def audio_message_params
-    params.require(:audio_message).permit(:audio_file)
+    params.require(:audio_message).permit(:audio_file, :description)
   end
 end

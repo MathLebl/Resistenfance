@@ -1,14 +1,2 @@
-<h1>AudioMessages#show</h1>
-<p>Find me in app/views/audio_messages/show.html.erb</p>
-
-<figure>
-    <figcaption>Listen to your message:</figcaption>
-    <audio
-        controls
-        src=<%= @audio_message.audio_file %> >
-            Your browser does not support the
-            <code>audio</code> element.
-    </audio>
-</figure>
-
-<%= audio_tag rails_blob_path(@audio_message.audio_file.first), controls: true, preload: "none" %>
+<%= @audio_message.description %>
+<%= audio_tag rails_blob_path(@audio_message.audio_file), controls: true, preload: "none" %>
