@@ -1,0 +1,6 @@
+<h1>AudioMessages#new</h1>
+<p>Find me in app/views/audio_messages/new.html.erb</p>
+<%= simple_form_for @audio_message do |f| %>
+  <%= f.input :audio_file, as: :file %>
+  <%= f.button :submit %>
+<% end %>
