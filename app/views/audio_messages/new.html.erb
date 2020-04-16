@@ -5,3 +5,30 @@
   <%= f.input :description %>
   <%= f.button :submit %>
 <% end %>
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Record and save audio</title>
+    <style>
+      audio {
+        display: block;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="record">Record</button>
+    <button id="stop" disabled>Stop</button>
+    <button id="play" disabled>Play</button>
+    <button id="save" disabled>Save</button>
+
+    <div id="saved-audio-messages">
+      <h2>Messages enregistrés</h2>
+    </div>
+    <script src="../../javascript/channels/sound_recorder.js"></script>
+  </body>
+</html>
