@@ -13,7 +13,7 @@ class MessageCrypter
       letter = letter.downcase
       if alphabet.include?(letter)
         letter_index = alphabet.index(letter)
-        crypted_letter = alphabet[(letter_index - @shift)]
+        crypted_letter = alphabet[(letter_index - @shift) % 26]
         crypted_message += is_letter_upcased ? crypted_letter.upcase : crypted_letter
       else
         crypted_message += letter
@@ -23,7 +23,8 @@ class MessageCrypter
   end
 
   def decrypt
-    encrypt(@message, -@shift)
+    @shift = -@shift
+    encrypt
   end
 
 end
