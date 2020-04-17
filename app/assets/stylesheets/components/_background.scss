@@ -1,3 +1,20 @@
+.bg-logo{
+    // position
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -11;
+    // display
+    width: 30em;
+    height: 20em;
+    background: linear-gradient(90deg, rgba(35,42,58,1) 0%, rgba(47,53,69,1) 90%);
+}
+.logo{
+    position: fixed;
+    width: 17em;
+    top: 1em;
+    left: 5em;
+}
 .folder{
     // position
     position: absolute;
@@ -5,7 +22,7 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    top: 10%;
+    top: 0%;
     rotate: -14deg;
     z-index: -10;
     // display
@@ -14,13 +31,11 @@
 .back-page{
     // position
     position: absolute;
-    left: 10%;
+    left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    top: 10%;
+    top: 2%;
     rotate: -14deg;
-    z-index: -1;
+    z-index: -5;
     .shadow-page{
         // position
         position: absolute;
@@ -34,10 +49,9 @@
     .page{
         // position
         position: relative;
+        margin: 50vh 0 0 10%;
+        transform: translateY(-50%);
         // display
-        width: 40%;
-        height: 90vh;
-        border-radius: 10px;
         background-color: $light-gray;
         color: $dark-gray;
         // children
