@@ -3,11 +3,22 @@
 <p>message de référence : <%= @message %></p>
 <p><%= @encrypted %></p>
 <p>test fonction décryptage : <%= @decrypted %></p> -->
+<section class="body">
+<div class="page">
+    <h4>This is a title</h4>
+    <p>message de référence : <%= @message %></p>
+    <p><%= @encrypted %></p>
+    <p>test fonction décryptage : <%= @decrypted %></p>
+</div>
 <div class="back-page">   
     <div class="page">
         <div class="shadow-page"></div>
         <h4>On est là papa.</h4>
         <p>Tu vas faire quoi?</p>
+        <div class="photo-container">
+            <div class="photo"></div>
+        </div>
     </div>
 </div>
 <%= image_tag('folder.svg', class: 'folder') %>
+</section>

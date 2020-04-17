@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+.body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    // column-gap: 2%;
+}
+.page{
+    // position
+    margin-top: 7%;
+    grid-column-start: 7;
+    grid-column-end: 11;
+    // display
+    height: 85vh;
+    border-radius: 10px;
+    background-color: white;
+    color: $dark-gray;
+    color: $dark-gray;
+    // children
+    h4{
+        padding-top: 10%;
+        padding-left: 3rem;
+    }
+    p{
+        padding-left: 3rem; 
+    }
+}
