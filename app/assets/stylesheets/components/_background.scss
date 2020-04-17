@@ -1,0 +1,52 @@
+.folder{
+    // position
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10%;
+    rotate: -14deg;
+    z-index: -10;
+    // display
+    width: 80%;
+}
+.back-page{
+    // position
+    position: absolute;
+    left: 10%;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 15%;
+    rotate: -14deg;
+    z-index: -1;
+    .shadow-page{
+        // position
+        position: absolute;
+        z-index: 12; 
+        // display
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        background: linear-gradient(270deg, rgba(35,42,58,0.2) 0%, rgba(35,42,58,1) 120%);
+    }
+    .page{
+        // position
+        position: relative;
+        // display
+        width: 40%;
+        height: 90vh;
+        border-radius: 10px;
+        background-color: $light-gray;
+        color: $dark-gray;
+        // children
+        h4{
+            padding-top: 10%;
+            padding-left: 3rem;
+        }
+        p{
+            padding-left: 3rem; 
+        }
+    }
+}
