@@ -1,9 +1,12 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+// Source Sans Pro (weight: 400, 600, 700)
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+// Special Elite (weight: 400)
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: 'Source Sans Pro', 'sans-serif';
+$headers-font: 'Special Elite', 'cursive';
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
