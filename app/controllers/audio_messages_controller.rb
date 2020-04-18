@@ -1,5 +1,6 @@
 class AudioMessagesController < ApplicationController
   before_action :set_message, only: %i[show]
+  skip_before_action :verify_authenticity_token, only: %i[create]
 
   def index
     @audio_messages = AudioMessage.all
@@ -29,6 +30,6 @@ class AudioMessagesController < ApplicationController
   end
 
   def audio_message_params
-    params.require(:audio_message).permit(:audio_file, :description)
+    params.require(:audio_message).permit(:audio_file)
   end
 end

@@ -69,28 +69,30 @@ const recordAudio = () =>
         reader.onload = () => {
           const base64AudioMessage = reader.result.split(',')[1];
 
-          fetch('/messages', {
+          fetch('/audio_messages', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: base64AudioMessage })
+            headers: { 'Content-Type': 'audio/mpeg' },
+            body: ({ audio_file: base64AudioMessage })
           }).then(res => {
             if (res.status === 201) {
               return populateAudioMessages();
             }
+            console.log(res);
             console.log('Invalid status saving audio message: ' + res.status);
           });
         };
       });
 
+
       const populateAudioMessages = () => {
-        return fetch('/messages').then(res => {
+        return fetch('/audio_messages').then(res => {
           if (res.status === 200) {
             return res.json().then(json => {
               json.messageFilenames.forEach(filename => {
-                let audioElement = document.querySelector(`[data-audio-filename="${filename}"]`);
+                let audioElement = document.querySelector(`[data-audio-filename="${audio_messages.id}"]`);
                 if (!audioElement) {
                   audioElement = document.createElement('audio');
-                  audioElement.src = `/messages/${filename}`;
+                  audioElement.src = `/audio_messages/${audio_message.id}`;
                   audioElement.setAttribute('data-audio-filename', filename);
                   audioElement.setAttribute('controls', true);
                   savedAudioMessagesContainer.appendChild(audioElement);
