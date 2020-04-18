@@ -64,23 +64,19 @@ const recordAudio = () =>
       });
 
       saveButton.addEventListener('click', () => {
-        const reader = new FileReader();
-        reader.readAsDataURL(audio.audioBlob);
-        reader.onload = () => {
-          const base64AudioMessage = reader.result.split(',')[1];
-
+        var record = new FormData();
+        record.append('audio_message[audio_file]', audio.audioBlob, 'test');
+          console.log('reloaded')
           fetch('/audio_messages', {
             method: 'POST',
-            headers: { 'Content-Type': 'audio/mpeg' },
-            body: ({ audio_file: base64AudioMessage })
+            body: record
           }).then(res => {
             if (res.status === 201) {
               return populateAudioMessages();
             }
-            console.log(res);
             console.log('Invalid status saving audio message: ' + res.status);
           });
-        };
+        window.location.href = '/audio_messages';
       });
 
 
