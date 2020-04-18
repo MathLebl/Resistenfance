@@ -1,7 +1,9 @@
 class AudioMessagesController < ApplicationController
   before_action :set_message, only: %i[show]
+  skip_before_action :verify_authenticity_token, only: %i[create]
 
   def index
+    @audio_messages = AudioMessage.all
   end
 
   def show
@@ -15,7 +17,7 @@ class AudioMessagesController < ApplicationController
     @audio_message= AudioMessage.new(audio_message_params)
     @audio_message.user = current_user
     @audio_message.save!
-    redirect_to audio_message_path(@audio_message)
+    redirect_to audio_messages_path
   end
 
   def destroy
@@ -28,6 +30,6 @@ class AudioMessagesController < ApplicationController
   end
 
   def audio_message_params
-    params.require(:audio_message).permit(:audio_file, :description)
+    params.require(:audio_message).permit(:audio_file)
   end
 end

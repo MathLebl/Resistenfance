@@ -64,33 +64,31 @@ const recordAudio = () =>
       });
 
       saveButton.addEventListener('click', () => {
-        const reader = new FileReader();
-        reader.readAsDataURL(audio.audioBlob);
-        reader.onload = () => {
-          const base64AudioMessage = reader.result.split(',')[1];
-
-          fetch('/messages', {
+        var record = new FormData();
+        record.append('audio_message[audio_file]', audio.audioBlob, 'test');
+          console.log('reloaded')
+          fetch('/audio_messages', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: base64AudioMessage })
+            body: record
           }).then(res => {
             if (res.status === 201) {
               return populateAudioMessages();
             }
             console.log('Invalid status saving audio message: ' + res.status);
           });
-        };
+        window.location.href = '/audio_messages';
       });
 
+
       const populateAudioMessages = () => {
-        return fetch('/messages').then(res => {
+        return fetch('/audio_messages').then(res => {
           if (res.status === 200) {
             return res.json().then(json => {
               json.messageFilenames.forEach(filename => {
-                let audioElement = document.querySelector(`[data-audio-filename="${filename}"]`);
+                let audioElement = document.querySelector(`[data-audio-filename="${audio_messages.id}"]`);
                 if (!audioElement) {
                   audioElement = document.createElement('audio');
-                  audioElement.src = `/messages/${filename}`;
+                  audioElement.src = `/audio_messages/${audio_message.id}`;
                   audioElement.setAttribute('data-audio-filename', filename);
                   audioElement.setAttribute('controls', true);
                   savedAudioMessagesContainer.appendChild(audioElement);

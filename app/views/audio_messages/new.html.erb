@@ -1,34 +1,27 @@
-<h1>AudioMessages#new</h1>
-<p>Find me in app/views/audio_messages/new.html.erb</p>
-<%= simple_form_for @audio_message do |f| %>
+<div>
+  <h1>Créer un nouveau message pour la résistance !</h1>
+</div>
+
+<div>
+  <p>Enregistres ton message</p>
+  <button id="record">Record</button>
+  <button id="stop" disabled>Stop</button>
+  <button id="play" disabled>Play</button>
+  <button id="save" disabled >Save</button>
+</div>
+<br>
+<div id="saved-audio-messages">
+  <h2>Messages enregistrés</h2>
+  <p><%= @audio_messages  %></p>
+</div>
+
+<div>
+  <p>importes ton message</p>
+  <%= simple_form_for @audio_message do |f| %>
   <%= f.input :audio_file, as: :file %>
   <%= f.input :description %>
-  <%= f.button :submit %>
-<% end %>
+  <%= f.button :submit, :Importer %>
+  <% end %>
+</div>
 
-
-
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Record and save audio</title>
-    <style>
-      audio {
-        display: block;
-        margin: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <button id="record">Record</button>
-    <button id="stop" disabled>Stop</button>
-    <button id="play" disabled>Play</button>
-    <button id="save" disabled>Save</button>
-
-    <div id="saved-audio-messages">
-      <h2>Messages enregistrés</h2>
-    </div>
-    <script src="../../javascript/channels/sound_recorder.js"></script>
-  </body>
-</html>
+<script src="../../javascript/channels/sound_recorder.js"></script>
