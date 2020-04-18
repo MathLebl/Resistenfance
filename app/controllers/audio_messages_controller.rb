@@ -2,6 +2,7 @@ class AudioMessagesController < ApplicationController
   before_action :set_message, only: %i[show]
 
   def index
+    @audio_messages = AudioMessage.all
   end
 
   def show
@@ -15,7 +16,7 @@ class AudioMessagesController < ApplicationController
     @audio_message= AudioMessage.new(audio_message_params)
     @audio_message.user = current_user
     @audio_message.save!
-    redirect_to audio_message_path(@audio_message)
+    redirect_to audio_messages_path
   end
 
   def destroy
