@@ -11,3 +11,23 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.bg-logo{
+  // position
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -11;
+  // display
+  width: 25em;
+  height: 8em;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(90deg, rgba(35,42,58,1) 0%, rgba(47,53,69,1) 90%);
+}
+
+.logo{
+  position: fixed;
+  width: 17em;
+  top: 1em;
+  left: 5em;
+}
