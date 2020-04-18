@@ -17,9 +17,10 @@
     transform: translateY(-50%) translateX(-90%);
     rotate: -14deg;
     z-index: -5;
-
+    // display
     height: 50em;
     width: 35em;
+    // children
     .shadow-page{
         // position
         position: absolute;
@@ -62,7 +63,7 @@
          border-radius: 10px;
          box-shadow: 0px 0px 30px rgba(35, 42, 58, 0.50);
          background-color: $light-gray;
-         
+        //  children
          .photo{
             //  position
             margin-top: 5%;
