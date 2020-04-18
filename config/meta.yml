@@ -1,0 +1,5 @@
+meta_product_name: "ResistEnfance"
+meta_title: "ResistEnfance - La radio de la RésistEnfance"
+meta_description: "Rejoins le ResistEnfance, participe à Radio Centre Aéré et participe à la lutte contre les Parents"
+meta_image: "logo.svg" # should exist in `app/assets/images/`
+twitter_account: "@14h14lepodcast"   # required for Twitter Cards
