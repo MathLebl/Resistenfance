@@ -1,15 +1,24 @@
-<!-- <h1>On est là papa. Tu vas faire quoi?</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<p>message de référence : <%= @message %></p>
-<p><%= @encrypted %></p>
-<p>test fonction décryptage : <%= @decrypted %></p> -->
-<section class="body">
-<div class="page">
-    <h4>This is a title</h4>
-    <p>message de référence : <%= @message %></p>
-    <p><%= @encrypted %></p>
-    <p>test fonction décryptage : <%= @decrypted %></p>
+<!-- Foreground -->
+<div class="video-container">
+    <iframe src="https://www.youtube.com/embed/X5B8k-TVX1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+<div class="page">
+    <h4>Réponds à l'appel du général Zoé</h4>
+    <p>
+        Message de référence : <%= @message %> <br>
+        Message crypté : <%= @encrypted %> <br>
+        Message décrypté : <%= @decrypted %>
+    </p>
+
+    <div class="links">
+        <%= link_to 'M\'engager dans la RésitEnfence', new_user_registration_path %>
+        <%= link_to 'Entrer dans le quartier général', new_user_session_path %>
+        <%= link_to 'Écouter Radio Centre Aéré', audio_messages_path %>
+    </div>
+</div>
+
+<!-- Background -->
 <div class="back-page">   
     <div class="page">
         <div class="shadow-page"></div>
@@ -20,5 +29,5 @@
         </div>
     </div>
 </div>
+
 <%= image_tag('folder.svg', class: 'folder') %>
-</section>
