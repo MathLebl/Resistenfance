@@ -7,10 +7,18 @@ true
     <iframe src="https://www.youtube.com/embed/X5B8k-TVX1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div class="page">
-    <h4>This is a title</h4>
-    <p>message de référence : <%= @message %></p>
-    <p><%= @encrypted %></p>
-    <p>test fonction décryptage : <%= @decrypted %></p>
+    <h4>Réponds à l'appel du général Zoé</h4>
+    <p>
+        Message de référence : <%= @message %> <br>
+        Message crypté : <%= @encrypted %> <br>
+        Message décrypté : <%= @decrypted %>
+    </p>
+
+    <div class="links">
+        <%= link_to 'M\'engager dans la RésitEnfence', new_user_registration_path %>
+        <%= link_to 'Entrer dans le quartier général', new_user_session_path %>
+        <%= link_to 'Écouter Radio Centre Aéré', audio_messages_path %>
+    </div>
 </div>
 <div class="back-page">   
     <div class="page">

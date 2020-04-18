@@ -1,17 +1,9 @@
 // Specific CSS for your home-page
-.body{
-    // display: grid;
-    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    // column-gap: 2%;
-}
 .page{
     // position
     margin-left: 55%;
     margin-top: 50vh;
     transform: translateY(-50%);
-    // grid-column-start: 7;
-    // grid-column-end: 11;
-    
     // display
     height: 50em;
     width: 35em;
@@ -23,9 +15,34 @@
     h4{
         padding-top: 70%;
         padding-left: 3rem;
+        margin-bottom: 1em;
     }
     p{
         padding-left: 3rem; 
+    }
+    .links{
+        margin-top: 5rem;
+        display: grid;
+        padding: 0 3rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+    }
+    a{
+        justify-self: center;
+        text-align: center;
+        font-family: $headers-font;
+        color: $dark-gray;
+        &:hover{
+            position: relative;
+        }
+        &:hover:after{
+            content: url('select-ellipse.svg');
+            display: block;
+            position: absolute;
+            width: 10em;
+            top:-30%;
+            left: -10%;
+        }
     }
 }
 
@@ -40,12 +57,14 @@
     justify-content: center;
     width: 25em;
     height: 20em;
-    border-radius: 10px;
     background-color: white;
+    border-radius: 10px;
     box-shadow: 0px 0px 30px rgba(35, 42, 58, 0.10);
     //children 
     iframe{
+        // position
         margin-top: 5%;
+        // display
         width: 90%;
         height: 75%;
         border-radius: 10px;
