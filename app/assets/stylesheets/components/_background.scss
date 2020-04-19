@@ -29,7 +29,7 @@
         height: 100%;
         width: 100%;
         border-radius: 10px;
-        background: linear-gradient(270deg, rgba(35,42,58,0.2) 0%, rgba(35,42,58,1) 120%);
+        background: linear-gradient(270deg, rgba(196, 196, 196, 0) 0%, rgba(196, 196, 196, 0.8) 120%);
     }
     .page{
         // position
@@ -37,8 +37,8 @@
         margin: 0;
         transform: none;
         // display
-        background-color: $light-gray;
-        color: $dark-gray;
+        background-color: $light-grey;
+        color: $dark-grey;
         // children
         h4{
             padding-top: 10%;
@@ -62,7 +62,7 @@
          height: 30%;
          border-radius: 10px;
          box-shadow: 0px 0px 30px rgba(35, 42, 58, 0.50);
-         background-color: $light-gray;
+         background-color: $light-grey;
         //  children
          .photo{
             //  position
@@ -70,7 +70,7 @@
             // display
             width: 90%;
             height: 70%;
-            background-color: $gray;
+            background-color: $grey;
             border-radius: 10px; 
          }
     }
