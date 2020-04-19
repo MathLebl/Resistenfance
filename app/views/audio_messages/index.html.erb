@@ -2,7 +2,7 @@
 <h1>Radio Centre Aéré</h1>
 <p>Les dicours des membres de la résistance</p>
 </div>
-<% if @audio_messages.nil? %>
+<% if @audio_messages.empty? %>
 <div>
   <h2>pas de messages publiés!</h2>
 </div>
@@ -25,3 +25,10 @@
   <% end %>
 </div>
 <% end %>
+
+<div class="message-form">
+  <form id="search-form" class="">
+      <input id="form" class="" type="text" placeholder="Donnes tes impressions sur la vidéo" aria-label="Commentaire">
+      <input type="submit" value="Oui chef !" class="submit-button">
+    </form>
+</div>
