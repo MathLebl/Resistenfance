@@ -9,8 +9,8 @@
     width: 35em;
     border-radius: 10px;
     background-color: white;
-    color: $dark-gray;
-    color: $dark-gray;
+    color: $dark-grey;
+    color: $dark-grey;
     // children
     h4{
         padding-top: 70%;
@@ -34,8 +34,8 @@
         justify-self: center;
         // display
         text-align: center;
-        font-family: $headers-font;
-        color: $dark-gray;
+        font-family: $special;
+        color: $dark-grey;
         // status
         &:hover{
             position: relative;
