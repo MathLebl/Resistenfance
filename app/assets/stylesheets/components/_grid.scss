@@ -1,0 +1,11 @@
+.grid-container{
+    // position
+    margin-top: 15vh;
+    padding: 0 5%;
+    // display
+    display: grid;
+    height: 80vh;
+    width: 100%;
+    // grid
+    grid-template-columns: 3fr 4fr;
+}
