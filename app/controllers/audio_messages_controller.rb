@@ -4,6 +4,7 @@ class AudioMessagesController < ApplicationController
 
   def index
     @audio_messages = AudioMessage.all
+    @comments = Comment.all #loads all the audio messages comments
   end
 
   def show
