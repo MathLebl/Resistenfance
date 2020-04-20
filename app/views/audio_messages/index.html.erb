@@ -30,13 +30,13 @@
 
 <div class="comments">
   <% @comments.each do |comment| %>
-    <p><%= comment.user_id %></p>
-    <p><%= comment.message %></p>
+    <p><%= comment.user.email %></p>
+    <p style="border-bottom: 1px solid white"><%= comment.message %></p>
   <% end %>
 </div>
 <div class="message-form">
   <form id="search-form" class="">
-    <input id="form" class="" type="text" placeholder="Donnes tes impressions sur la vidéo" aria-label="Commentaire">
+    <input id="form" class="" type="text" placeholder="Donnes tes impressions sur le message audio !" aria-label="Commentaire">
     <input type="submit" value="Oui chef !" class="submit-button">
   </form>
 </div>

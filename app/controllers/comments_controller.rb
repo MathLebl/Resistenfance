@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     @comment.save!
-    render json: { comment: @comment }
+    render json: { comment: @comment } #render JSON which will be sent in response to the fetch
   end
 
   def update
