@@ -2,7 +2,7 @@
 <h1>Radio Centre Aéré</h1>
 <p>Les dicours des membres de la résistance</p>
 </div>
-<% if @audio_messages.nil? %>
+<% if @audio_messages.empty? %>
 <div>
   <h2>pas de messages publiés!</h2>
 </div>
@@ -10,18 +10,33 @@
 <div>
   <% @audio_messages.each do |audio_message| %>
   <div>
-    <h2>
-    <%= audio_message.user.email %>
-    </h2>
-    <p> <%= audio_message.description %></p>
-    <div>
-      <% if audio_message.audio_file.attached? == false %>
-      <p>Pas d'audio</p>
-      <% else %>
-      <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
-      <% end %>
+    <div class="audio-message" data-audio-id="<%= audio_message.id %>">
+      <h2>
+      <%= audio_message.user.email %>
+      </h2>
+      <p> <%= audio_message.description %></p>
+      <div>
+        <% if audio_message.audio_file.attached? == false %>
+        <p>Pas d'audio</p>
+        <% else %>
+        <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
+        <% end %>
+      </div>
     </div>
   </div>
   <% end %>
 </div>
 <% end %>
+
+<div class="comments">
+  <% @comments.each do |comment| %>
+    <p><%= comment.user.email %></p>
+    <p style="border-bottom: 1px solid white"><%= comment.message %></p>
+  <% end %>
+</div>
+<div class="message-form">
+  <form id="search-form" class="">
+    <input id="form" class="" type="text" placeholder="Donnes tes impressions sur le message audio !" aria-label="Commentaire">
+    <input type="submit" value="Oui chef !" class="submit-button">
+  </form>
+</div>
