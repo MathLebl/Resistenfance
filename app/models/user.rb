@@ -7,5 +7,5 @@ class User < ApplicationRecord
   enum avatar: [ :gohan, :goku, :vegeta, :krillin ]
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 end
