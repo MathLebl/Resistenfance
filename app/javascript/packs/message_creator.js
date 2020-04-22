@@ -1,7 +1,7 @@
 
 const eventListener = () => {
   const form = document.querySelector('#search-form')
-  console.log(form)
+  // console.log(form)
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     messageGetter();
@@ -12,6 +12,7 @@ const messageGetter = () => {
   const form = document.querySelector('#form')
   const message = form.value
   postMessage(message);
+  form.value = "";
 }
 
 const postMessage = (message) => {
@@ -24,7 +25,7 @@ const postMessage = (message) => {
   })
   .then(response => response.json())
   .then((data) => {
-    console.log(data.comment);
+    // console.log(data.comment);
   })
 }
 
