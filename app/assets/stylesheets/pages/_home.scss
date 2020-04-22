@@ -1,4 +1,7 @@
 // Specific CSS for your home-page
+body{
+    background: linear-gradient(270deg, rgb(232, 232, 232) 0%, rgba(196, 196, 196, 0.8) 100%);
+}
 .page{
     // position
     margin-left: 55%;
@@ -9,8 +12,8 @@
     width: 35em;
     border-radius: 10px;
     background-color: white;
-    color: $dark-gray;
-    color: $dark-gray;
+    color: $dark-grey;
+    color: $dark-grey;
     // children
     h4{
         padding-top: 70%;
@@ -34,8 +37,8 @@
         justify-self: center;
         // display
         text-align: center;
-        font-family: $headers-font;
-        color: $dark-gray;
+        font-family: $special;
+        color: $dark-grey;
         // status
         &:hover{
             position: relative;

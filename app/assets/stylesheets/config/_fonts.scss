@@ -5,8 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
 
 // Define fonts for body and headers
+// For pressets bootsrap
 $body-font: 'Source Sans Pro', 'sans-serif';
 $headers-font: 'Special Elite', 'cursive';
+// For us as shortcuts 
+$source-sans: 'Source Sans Pro', 'sans-serif';
+$special: 'Special Elite', 'cursive';
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

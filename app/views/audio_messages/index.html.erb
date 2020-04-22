@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="app">
   <div class="left">
     <%= image_tag('microphone.svg', class: 'microphone') %>
@@ -28,7 +29,49 @@
         </div>
       </div>
       <% end %>
+=======
+<div>
+<h1>Radio Centre Aéré</h1>
+<p>Les dicours des membres de la résistance</p>
+</div>
+<% if @audio_messages.empty? %>
+<div>
+  <h2>pas de messages publiés!</h2>
+</div>
+<% else %>
+<div>
+  <% @audio_messages.each do |audio_message| %>
+  <div>
+    <div class="audio-message" data-audio-id="<%= audio_message.id %>">
+      <h2>
+      <%= audio_message.user.email %>
+      </h2>
+      <p> <%= audio_message.description %></p>
+      <div>
+        <% if audio_message.audio_file.attached? == false %>
+        <p>Pas d'audio</p>
+        <% else %>
+        <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
+        <% end %>
+      </div>
+>>>>>>> d39a83f849956178e925737d65eadd7c6dd6418c
     </div>
     <% end %>
   </div>
 </div>
+<<<<<<< HEAD
+=======
+<% end %>
+
+<div id="comments-list" class="comments">
+  <% @comments.each do |comment| %>
+    <%= render "comments/comment", comment: comment %>
+  <% end %>
+</div>
+<div class="message-form">
+  <form id="search-form" class="">
+    <input id="form" class="" type="text" placeholder="Donnes tes impressions sur le message audio !" aria-label="Commentaire">
+    <input type="submit" value="Oui chef !" class="submit-button">
+  </form>
+</div>
+>>>>>>> d39a83f849956178e925737d65eadd7c6dd6418c
