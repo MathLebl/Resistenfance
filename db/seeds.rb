@@ -8,6 +8,6 @@
 
 p '------------------'
 p 'Starting seeds ...'
-User.create!({email: 'test@test.com', password: 'testing123'})
+User.create!({pseudo: 'Chuck Norris', grade: 'sergent', email: 'test@test.com', password: 'testing123'})
 p 'Finished !'
 p '------------------'

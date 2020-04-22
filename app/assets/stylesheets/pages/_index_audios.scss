@@ -1,0 +1,67 @@
+.grid-container {
+  .left{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40vw;
+  height: 100%;
+  }
+    .microphone {
+    margin-top: 180px;
+    position: sticky;
+    margin-right: 180px;
+    top: 100px;
+    }
+  }
+  .right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 60vw;
+    .radio-title {
+      margin-top: 150px;
+    }
+    .audio-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    grid-auto-rows: auto;
+      .audio-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+      grid-auto-rows: auto;
+      background-color: red;
+      border-radius: 20px;
+      width: 80%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      padding: 10px;
+        .pseudo {
+        color: $black;
+        grid-column-start: 1;
+        grid-row: 2;
+        align-self: center;
+        margin: 0;
+        }
+        .grade {
+        color: $dark-grey;
+        grid-column-start: 2;
+        grid-row: 2;
+        align-self: center;
+        margin: 0;
+        color: $red;
+        }
+        .player {
+        grid-column: 2 / 3;
+        grid-row: 3;
+        align-self: center;
+        margin: 0;
+        }
+        audio {
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        border-radius: 25px;
+        }
+      }
+    }
+  }
