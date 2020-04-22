@@ -7,8 +7,10 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user
-    @comment.save!
-    render json: { comment: @comment } #render JSON which will be sent in response to the fetch
+    if @comment.save
+      ActionCable.server.broadcast("audio_messages", render_to_string(partial: "comment", locals: { comment: @comment }))
+      render json: { comment: @comment } #render JSON which will be sent in response to the fetch
+    end
   end
 
   def update

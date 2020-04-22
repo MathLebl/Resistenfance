@@ -28,10 +28,9 @@
 </div>
 <% end %>
 
-<div class="comments">
+<div id="comments-list" class="comments">
   <% @comments.each do |comment| %>
-    <p><%= comment.user.email %></p>
-    <p style="border-bottom: 1px solid white"><%= comment.message %></p>
+    <%= render "comments/comment", comment: comment %>
   <% end %>
 </div>
 <div class="message-form">
