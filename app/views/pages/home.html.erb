@@ -4,6 +4,7 @@
 </div>
 
 <div class="page">
+    <%= link_to 'LogOut provisoire', destroy_user_session_path, class: 'logout' %>
     <h4>Réponds à l'appel du général Zoé</h4>
     <p>
         Message de référence : <%= @message %> <br>
@@ -15,23 +16,39 @@
         <%= link_to 'M\'engager dans la RésitEnfence', new_user_registration_path %>
         <%= link_to 'Entrer dans le quartier général', new_user_session_path %>
         <%= link_to 'Écouter Radio Centre Aéré', audio_messages_path %>
-        <%= link_to 'LogOut provisoire', destroy_user_session_path %>
-
     </div>
 </div>
 
 <!-- Background -->
-<div class="back-page">
+<div class="folder-content">
     <div class="page">
         <div class="shadow-page"></div>
         <h4>On est là papa.</h4>
         <p>Tu vas faire quoi?</p>
-        <div class="photo-container">
-            <div class="photo"></div>
+        <div id="first"class="photo-container">
+            <!-- <div class="photo"></div> -->
+            <%= image_tag('photo4.jpg', class: 'photo') %>
         </div>
     </div>
 </div>
 
 <%= image_tag('folder.svg', class: 'folder') %>
+
+<div id="second" class="photo-container">
+    <!-- <div class="photo"></div> -->
+    <%= image_tag('photo1.jpg', class: 'photo') %>
+</div>
+<div id="third" class="photo-container">
+    <!-- <div class="photo"></div> -->
+    <%= image_tag('photo2.jpg', class: 'photo') %>
+</div>
+<div id="fourth" class="photo-container">
+    <!-- <div class="photo"></div> -->
+    <%= image_tag('photo3.jpg', class: 'photo') %>
+</div>
+<%= image_tag('pencil.svg', class: 'pencil') %>
+<%= image_tag('flower.svg', class: 'flower') %>
+<%= image_tag('scribbles.svg', class: 'scribbles') %>
+<%= image_tag('stickman.svg', class: 'stickman') %>
 
 <div class="back-gradient"></div>
