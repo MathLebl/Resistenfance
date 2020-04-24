@@ -62,15 +62,13 @@ ActiveRecord::Schema.define(version: 2020_04_22_160328) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "avatar"
-    t.string "pseudo"
-    t.string "grade"
-    t.boolean "email_confirmed", default: false
-    t.string "confirm_token"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.integer "avatar"
+    t.string "pseudo"
+    t.string "grade"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
