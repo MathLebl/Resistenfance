@@ -1,5 +1,6 @@
 class AudioMessagesController < ApplicationController
   before_action :set_message, only: %i[show]
+  skip_before_action :authenticate_user!, only: %i[index]
   skip_before_action :verify_authenticity_token, only: %i[create]
 
   def index

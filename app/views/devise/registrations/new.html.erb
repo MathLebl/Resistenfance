@@ -9,6 +9,7 @@
     <%= f.input :grade,
                 required: true,
                 autofocus: true,
+                collection: ["Caporale", "Sergent", "Adjudant", "Major", "Lieutenant", "Capitaine", "Colonel", "Général"],
                 input_html: { autocomplete: "grade" }%>
     <%= f.input :email,
                 required: true,

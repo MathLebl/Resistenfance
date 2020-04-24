@@ -1,5 +1,5 @@
 <div>
-  <h1>Créer un nouveau message pour la résistance !</h1>
+  <h2>Créer un nouveau message pour la résistance !</h2>
 </div>
 
 <div>
@@ -19,7 +19,6 @@
   <p>importes ton message</p>
   <%= simple_form_for @audio_message do |f| %>
   <%= f.input :audio_file, as: :file %>
-  <%= f.input :description %>
   <%= f.button :submit, :Importer %>
   <% end %>
 </div>

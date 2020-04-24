@@ -3,8 +3,8 @@
     <%= image_tag('microphone.svg', class: 'microphone') %>
   </div>
   <div class="right">
-    <div>
-      <h1>Radio Centre Aéré</h1>
+    <div class="radio-title">
+      <h2>Radio Centre Aéré</h2>
       <p>Les discours des membres de la résistance</p>
     </div>
     <% if @audio_messages.empty? %>
@@ -12,13 +12,22 @@
       <h2>Pas de messages publiés!</h2>
     </div>
     <% else %>
+    <% @audio_messages.each do |audio_message| %>
     <div class="audio-cards">
-      <% @audio_messages.each do |audio_message| %>
       <div class="audio-card">
+        <% if audio_message.user.avatar.nil? %>
+        <%= image_tag "avatars/krillin.jpeg" %>
+        <% else %>
+        <div class="card-avatar">
+          <%= image_tag "avatars/#{audio_message.user.avatar}.jpeg" %>
+        </div>
+        <% end %>
         <h2 class="pseudo">
-          <%= audio_message.user.email %>
+        <%= audio_message.user.pseudo %>
         </h2>
-        <p class="grade"><%= audio_message.description %></p>
+        <p class="grade">
+          <%= audio_message.user.grade %>
+        </p>
         <div class="player">
           <% if audio_message.audio_file.attached? == false %>
           <p>Pas d'audio</p>
@@ -26,55 +35,19 @@
           <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
           <% end %>
         </div>
+        <div id="comments-list" class="comments">
+          <% @comments.each do |comment| %>
+          <%= render "comments/comment", comment: comment %>
+          <% end %>
+        </div>
+        <div class="message-form">
+          <form id="search-form" class="">
+            <input id="form" class="" type="text" placeholder="Donnes tes impressions sur le message audio !" aria-label="Commentaire">
+            <input type="submit" value="Oui chef !" class="submit-button">
+          </form>
+        </div>
       </div>
       <% end %>
-      <div class="radio-title">
-        <h2>Radio Centre Aéré</h1>
-          <p>Les discours des membres de la résistance</p>
-        </div>
-        <% if @audio_messages.empty? %>
-        <h2>Pas de messages publiés!</h2>
-        <% else %>
-        <% @audio_messages.each do |audio_message| %>
-        <div class="audio-cards">
-          <div class="audio-card">
-            <% if audio_message.user.avatar.nil? %>
-            <%= image_tag "avatars/krillin.jpeg" %>
-            <% else %>
-            <div class="card-avatar">
-              <%= image_tag "avatars/#{audio_message.user.avatar}.jpeg" %>
-            </div>
-            <% end %>
-            <h2 class="pseudo">
-              <%= audio_message.user.pseudo %>
-            </h2>
-            <p class="grade">
-              <%= audio_message.user.grade %>
-            </p>
-            <div class="player">
-              <% if audio_message.audio_file.attached? == false %>
-              <p>Pas d'audio</p>
-              <% else %>
-              <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
-              <% end %>
-            </div>
-            <div id="comments-list" class="comments">
-              <% @comments.each do |comment| %>
-              <%= render "comments/comment", comment: comment %>
-              <% end %>
-            </div>
-            <div class="message-form">
-              <form id="search-form" class="">
-                <input id="form" class="" type="text" placeholder="Donnes tes impressions sur le message audio !" aria-label="Commentaire">
-                <input type="submit" value="Oui chef !" class="submit-button">
-              </form>
-            </div>
-          </div>
-          <% end %>
-          <% end %>
-        </div>
-        <% end %>
-      </div>
-    </h2>
+    </div>
+    <% end %>
   </div>
-</div>
