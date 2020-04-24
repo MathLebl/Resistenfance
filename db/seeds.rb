@@ -9,9 +9,11 @@ p "Cleaning DataBase"
 User.destroy_all
 p '------------------'
 p 'Starting seeds ...'
-user1 = User.create!({pseudo: 'Fox Trot', grade: 'Sergent', email: 'foxtrot@test.com', password: 'testing123'})
 
-user2 = User.create!({pseudo: 'Chuck Norris', grade: 'Lieutenant', email: 'chucknorris@test.com', password: 'testing123'})
+user1 = User.new({pseudo: 'Fox Trot', grade: 'Sergent', email: 'foxtrot@test.com', password: 'testing123'})
+user1.skip_confirmation!
+user2 = User.new({pseudo: 'Chuck Norris', grade: 'Lieutenant', email: 'chucknorris@test.com', password: 'testing123'})
+user2.skip_confirmation!
 '------------------'
 
 audios_attributes = [
@@ -32,6 +34,7 @@ audios_attributes.each do |audios_attribute|
 end
 
 p '---------------'
+
 
 p 'Finished !'
 
