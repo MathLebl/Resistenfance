@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :audio_messages, only: %i[index show new create destroy]
   resources :comments, only: %i[index create update destroy]
+  resources :users, only: %i[show]
   devise_for :users
   get 'about', to: 'pages#about'
   root to: 'pages#home'

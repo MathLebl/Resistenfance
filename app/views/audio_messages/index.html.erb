@@ -7,8 +7,10 @@
       <h2>Radio Centre Aéré</h2>
       <p>Les discours des membres de la résistance</p>
     </div>
-    <% if @audio_messages.nil? %>
-    <h2>Pas de messages publiés!</h2>
+    <% if @audio_messages.empty? %>
+    <div>
+      <h2>Pas de messages publiés!</h2>
+    </div>
     <% else %>
     <% @audio_messages.each do |audio_message| %>
     <div class="audio-cards">
