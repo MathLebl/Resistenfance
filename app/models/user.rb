@@ -8,4 +8,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
+
+  validates :grade, inclusion: { in: %w(Caporale Sergent Adjudant Major Lieutenant Capitaine Colonel Général),
+    message: "%{grade} n'est pas un grade autorisé !" }
 end
