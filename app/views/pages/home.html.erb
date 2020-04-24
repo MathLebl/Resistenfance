@@ -4,6 +4,7 @@
 </div>
 
 <div class="page">
+    <%= link_to 'LogOut provisoire', destroy_user_session_path, class: 'logout' %>
     <h4>Réponds à l'appel du général Zoé</h4>
     <p>
         Message de référence : <%= @message %> <br>
@@ -15,8 +16,6 @@
         <%= link_to 'M\'engager dans la RésitEnfence', new_user_registration_path %>
         <%= link_to 'Entrer dans le quartier général', new_user_session_path %>
         <%= link_to 'Écouter Radio Centre Aéré', audio_messages_path %>
-        <%= link_to 'LogOut provisoire', destroy_user_session_path %>
-
     </div>
 </div>
 

@@ -4,6 +4,7 @@ body{
 }
 .page{
     // position
+    position: relative;
     margin-left: 55%;
     margin-top: 50vh;
     transform: translateY(-50%);
@@ -23,6 +24,12 @@ body{
     p{
         padding-left: 3rem; 
     }
+    .logout{
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        text-decoration: none;
+    }
     .links{
         // position
         margin-top: 5rem;
@@ -31,25 +38,26 @@ body{
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 1rem;
         padding: 0 3rem;
-    }
-    a{
-        // position
-        justify-self: center;
-        // display
-        text-align: center;
-        font-family: $special;
-        color: $dark-grey;
-        // status
-        &:hover{
-            position: relative;
-        }
-        &:hover:after{
-            content: url('select-ellipse.svg');
-            display: block;
-            position: absolute;
-            width: 10em;
-            top:-30%;
-            left: -10%;
+        a{
+            // position
+            justify-self: center;
+            // display
+            text-align: center;
+            font-family: $special;
+            color: $dark-grey;
+            text-decoration: none;
+            // status
+            &:hover{
+                position: relative;
+            }
+            &:hover:after{
+                content: url('select-ellipse.svg');
+                display: block;
+                position: absolute;
+                width: 10em;
+                top:-30%;
+                left: -10%;
+            }
         }
     }
 }
