@@ -49,29 +49,31 @@
 
 <!-- audio messages cards -->
 <div class="audio-cards">
-  <div class="audio-card">
-    <!-- avatar -->
-    <div class="image">
-      <% if @user.avatar.nil? %>
-        <%= image_tag "avatars/krillin.jpeg", class: "little-avatar" %>
-      <% else %>
-        <%= image_tag "avatars/#{@user.avatar}.jpeg", class: "little-avatar" %>
-      <% end %>
-    </div>
-    <div class="pseudo-and-audio">
-      <!-- user infos -->
-      <div class="username">
-        <h3><%= @user.pseudo %></h3>
-        <p><%= @user.grade %></p>
-      </div>
-      <!-- audio message -->
-      <div class="player">
-        <% if @audio_message.audio_file.attached? == false %>
-          <p>Pas d'audio</p>
+  <% @audio_messages.each do |audio_message| %>
+    <div class="audio-card">
+      <!-- avatar -->
+      <div class="image">
+        <% if @user.avatar.nil? %>
+          <%= image_tag "avatars/krillin.jpeg", class: "little-avatar" %>
         <% else %>
-          <%= audio_tag rails_blob_path(@audio_message.audio_file), controls: true %>
+          <%= image_tag "avatars/#{@user.avatar}.jpeg", class: "little-avatar" %>
         <% end %>
       </div>
+      <div class="pseudo-and-audio">
+        <!-- user infos -->
+        <div class="username">
+          <h3><%= @user.pseudo %></h3>
+          <p><%= @user.grade %></p>
+        </div>
+        <!-- audio message -->
+        <div class="player">
+          <% if audio_message.audio_file.attached? == false %>
+            <p>Pas d'audio</p>
+          <% else %>
+            <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
