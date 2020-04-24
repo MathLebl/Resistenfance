@@ -3,19 +3,17 @@
     position: absolute;
     left: 50%;
     top: 50vh;
-    transform: translateY(-60%) translateX(-45%);
-    rotate: -14deg;
+    transform: translateY(-50%) translateX(-50%) rotate(-14deg);
     z-index: -10;
     // display
     width: 75em;
 }
-.back-page{
+.folder-content{
     // position
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translateY(-50%) translateX(-90%);
-    rotate: -14deg;
+    top: 50vh;
+    transform: translateY(-38%) translateX(-100%) rotate(-14deg);
     z-index: -5;
     // display
     height: 50em;
@@ -35,6 +33,7 @@
         // position
         position: relative;
         margin: 0;
+        top: 0;
         transform: none;
         // display
         background-color: $light-grey;
@@ -48,30 +47,92 @@
             padding-left: 3rem; 
         }
     }
-
-    .photo-container{
-         // position
-         position: absolute;
-         top: 50%;
-         left: 10%;
-         rotate: 23deg;
-         // display
-         display: flex;
-         justify-content: center;
-         width: 45%;
-         height: 30%;
-         border-radius: 10px;
-         box-shadow: 0px 0px 30px rgba(35, 42, 58, 0.50);
-         background-color: $light-grey;
-        //  children
-         .photo{
-            //  position
-            margin-top: 5%;
-            // display
-            width: 90%;
-            height: 70%;
-            background-color: $grey;
-            border-radius: 10px; 
-         }
+}
+.photo-container{
+    // position
+    position: absolute;
+    // display
+    display: flex;
+    justify-content: center;
+    width: 15em;
+    height: 15em;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(35, 42, 58, 0.50);
+    background-color: $light-grey;
+    //  children
+    .photo{
+        //  position
+        margin-top: 5%;
+        // display
+        width: 90%;
+        height: 70%;
+        background-color: $grey;
+        border-radius: 10px; 
     }
+}
+// position of polaroids
+#first{
+    top: 50%;
+    left: 10%;
+    rotate: 23deg;
+}
+#second{
+    top: 40%;
+    left: 50%;
+    transform: translateX(-320%) rotate(30deg);
+    opacity: 60%;
+    z-index: -15;
+}
+#third{
+    top: 0%;
+    left: 40%;
+    opacity: 60%;
+    transform: rotate(230deg);
+    z-index: -15;
+}
+#fourth{
+    bottom: -5%;
+    right: 20%;
+    opacity: 60%;
+    transform: rotate(-20deg);
+    z-index: -15;
+}
+
+.pencil{
+    position: absolute;
+    top:18%;
+    right: 2%;
+    opacity: 80%;
+    transform: rotate(60deg);
+    z-index: -15;
+    width: 20em;
+}
+
+.flower{
+    position: absolute;
+    top:5%;
+    left: 20%;
+    opacity: 80%;
+    transform: rotate(160deg);
+    z-index: -20;
+    width: 15em;
+}
+
+.scribbles{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-210%) rotate(0deg);
+    opacity: 80%;
+    z-index: -20;
+    width: 20em;
+}
+.stickman{
+    position: absolute;
+    top:40%;
+    right: 3%;
+    opacity: 80%;
+    transform: rotate(20deg);
+    z-index: -20;
+    height: 20em;
 }
