@@ -101,9 +101,9 @@
 .pencil{
     position: absolute;
     top:18%;
-    right: 2%;
+    right: 50%;
     opacity: 80%;
-    transform: rotate(60deg);
+    transform: translateX(260%) rotate(60deg);
     z-index: -15;
     width: 20em;
 }
@@ -111,9 +111,9 @@
 .flower{
     position: absolute;
     top:5%;
-    left: 20%;
+    left: 50%;
     opacity: 80%;
-    transform: rotate(160deg);
+    transform: translateX(-210%) rotate(160deg);
     z-index: -20;
     width: 15em;
 }
@@ -130,9 +130,9 @@
 .stickman{
     position: absolute;
     top:40%;
-    right: 3%;
+    right: 50%;
     opacity: 80%;
-    transform: rotate(20deg);
+    transform: translateX(550%) rotate(20deg);
     z-index: -20;
     height: 20em;
 }
