@@ -38,10 +38,12 @@
 
 <!-- add audio message card -->
 <div class="new-message">
+  <!-- text -->
   <div class="mes-messages">
     <h2>Mes messages</h2>
     <p>Les discours que tu as fait</p>
   </div>
+  <!-- link to aduio messages new -->
   <div class="add-audio-message">
     <%= link_to "Ajouter un nouveau message", new_audio_message_path %>
   </div>
@@ -59,6 +61,7 @@
           <%= image_tag "avatars/#{@user.avatar}.jpeg", class: "little-avatar" %>
         <% end %>
       </div>
+      <!-- user pseudo & audio container -->
       <div class="pseudo-and-audio">
         <!-- user infos -->
         <div class="username">
