@@ -5,7 +5,11 @@ class AudioMessagesController < ApplicationController
 
   def index
     @audio_messages = AudioMessage.all
-    @comments = Comment.all #loads all the audio messages comments
+    if current_user
+      @comments = Comment.all #loads all the audio messages comments
+    else
+      crypt_if_not_signed #launch method in private to make the code more readable
+    end
   end
 
   def show
@@ -33,5 +37,15 @@ class AudioMessagesController < ApplicationController
 
   def audio_message_params
     params.require(:audio_message).permit(:audio_file)
+  end
+
+  def crypt_if_not_signed
+    @comments = []
+    @uncrypted_comments = Comment.all #loads all the audio messages comments
+    @uncrypted_comments.each do |comment|
+      crypter = MessageCrypter.new(comment.message)
+      crypted_comment = Comment.new(user_id: comment.user_id, message: crypter.encrypt, audio_message_id: comment.audio_message_id)
+      @comments << crypted_comment
+    end
   end
 end
