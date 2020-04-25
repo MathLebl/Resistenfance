@@ -6,11 +6,6 @@
 <div class="page">
     <%= link_to 'LogOut provisoire', destroy_user_session_path, class: 'logout' %>
     <h4>Réponds à l'appel du général Zoé</h4>
-    <p>
-        Message de référence : <%= @message %> <br>
-        Message crypté : <%= @encrypted %> <br>
-        Message décrypté : <%= @decrypted %>
-    </p>
 
     <div class="links">
         <%= link_to 'M\'engager dans la RésitEnfence', new_user_registration_path %>
