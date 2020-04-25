@@ -1,33 +1,4 @@
-// Specific CSS for your home-page
-body{
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    background: linear-gradient(270deg, rgb(232, 232, 232) 0%, rgba(196, 196, 196, 0.8) 100%);
-}
-
 .page{
-    // position
-    position: relative;
-    margin-left: 55%;
-    top: 50vh;
-    transform: translateY(-50%);
-    // display
-    height: 50em;
-    width: 35em;
-    border-radius: 10px;
-    background-color: white;
-    color: $dark-grey;
-    color: $dark-grey;
-    // children
-    h4{
-        padding-top: 70%;
-        padding-left: 3rem;
-        margin-bottom: 1em;
-    }
-    p{
-        padding-left: 3rem; 
-    }
     .logout{
         position: absolute;
         right: 5%;

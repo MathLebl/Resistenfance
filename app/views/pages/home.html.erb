@@ -1,8 +1,11 @@
 <!-- Foreground -->
+
+<!-- Video -->
 <div class="video-container">
     <iframe src="https://www.youtube.com/embed/X5B8k-TVX1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+<!-- Page -->
 <div class="page">
     <%= link_to 'LogOut provisoire', destroy_user_session_path, class: 'logout' %>
     <h4>Réponds à l'appel du général Zoé</h4>
@@ -15,35 +18,4 @@
 </div>
 
 <!-- Background -->
-<div class="folder-content">
-    <div class="page">
-        <div class="shadow-page"></div>
-        <h4>On est là papa.</h4>
-        <p>Tu vas faire quoi?</p>
-        <div id="first"class="photo-container">
-            <!-- <div class="photo"></div> -->
-            <%= image_tag('photo4.jpg', class: 'photo') %>
-        </div>
-    </div>
-</div>
-
-<%= image_tag('folder.svg', class: 'folder') %>
-
-<div id="second" class="photo-container">
-    <!-- <div class="photo"></div> -->
-    <%= image_tag('photo1.jpg', class: 'photo') %>
-</div>
-<div id="third" class="photo-container">
-    <!-- <div class="photo"></div> -->
-    <%= image_tag('photo2.jpg', class: 'photo') %>
-</div>
-<div id="fourth" class="photo-container">
-    <!-- <div class="photo"></div> -->
-    <%= image_tag('photo3.jpg', class: 'photo') %>
-</div>
-<%= image_tag('pencil.svg', class: 'pencil') %>
-<%= image_tag('flower.svg', class: 'flower') %>
-<%= image_tag('scribbles.svg', class: 'scribbles') %>
-<%= image_tag('stickman.svg', class: 'stickman') %>
-
-<div class="back-gradient"></div>
+<%= render 'shared/background' %>
