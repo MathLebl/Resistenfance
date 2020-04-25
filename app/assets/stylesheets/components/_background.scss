@@ -74,65 +74,79 @@
 #first{
     top: 50%;
     left: 10%;
-    rotate: 23deg;
+    transform: rotate(23deg);
 }
 #second{
+    // position
     top: 40%;
     left: 50%;
     transform: translateX(-320%) rotate(30deg);
-    opacity: 60%;
     z-index: -15;
+    // display
+    opacity: 60%;
 }
 #third{
+    // position
     top: 0%;
     left: 40%;
-    opacity: 60%;
     transform: rotate(230deg);
     z-index: -15;
+    // display
+    opacity: 60%;
 }
 #fourth{
+    // position
     bottom: -5%;
     right: 20%;
-    opacity: 60%;
     transform: rotate(-20deg);
     z-index: -15;
+    // display
+    opacity: 60%;
 }
 
 .pencil{
+    // position
     position: absolute;
     top:18%;
     right: 50%;
-    opacity: 80%;
     transform: translateX(260%) rotate(60deg);
     z-index: -15;
+    // display
+    opacity: 80%;
     width: 20em;
 }
 
 .flower{
+    // position
     position: absolute;
     top:5%;
     left: 50%;
-    opacity: 80%;
     transform: translateX(-210%) rotate(160deg);
     z-index: -20;
+    // display
+    opacity: 80%;
     width: 15em;
 }
 
 .scribbles{
+    // position
     position: absolute;
     top: 70%;
     left: 50%;
     transform: translateX(-210%) rotate(0deg);
-    opacity: 80%;
     z-index: -20;
+    // display
+    opacity: 80%;
     width: 20em;
 }
 .stickman{
+    // position
     position: absolute;
     top:40%;
     right: 50%;
-    opacity: 80%;
     transform: translateX(550%) rotate(20deg);
     z-index: -20;
+    // display
+    opacity: 80%;
     height: 20em;
 }
