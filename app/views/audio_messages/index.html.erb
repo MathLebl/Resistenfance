@@ -23,7 +23,7 @@
         </div>
         <% end %>
         <h2 class="pseudo">
-        <%= audio_message.user.pseudo %>
+          <%= link_to audio_message.user.pseudo, resistenfant_path(audio_message.user.id), class: "user-link" %>
         </h2>
         <p class="grade">
           <%= audio_message.user.grade %>
@@ -37,7 +37,9 @@
         </div>
         <div id="comments-list" class="comments">
           <% @comments.each do |comment| %>
-          <%= render "comments/comment", comment: comment %>
+          <% if comment.audio_message_id == audio_message.id %>
+          <%= render "comments/comment", comment: comment, user: comment.user %>
+          <% end %>
           <% end %>
         </div>
         <div class="message-form">
