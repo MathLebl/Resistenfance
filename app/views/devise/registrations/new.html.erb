@@ -1,44 +1,40 @@
-<div class="page">
-
-  <h2>Sign up</h2>
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
-    <div class="form-inputs">
-      <%= f.input :pseudo,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "pseudo" }%>
-      <%= f.input :grade,
-                  required: true,
-                  autofocus: true,
-                  collection: ["Caporale", "Sergent", "Adjudant", "Major", "Lieutenant", "Capitaine", "Colonel", "Général"],
-                  input_html: { autocomplete: "grade" }%>
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :avatar,
-                  collection: [['Gohan', :gohan], ['Goku', :goku], ['Vegeta', :vegeta], ['Krillin', :krillin]],
-                  as: :radio_buttons,
-                  label: "Choisis un avatar parmi les suivants :",
-                  input_html: { autocomplete: "avatar" },
-                  required: true %>
-    </div>
-      <%= image_tag("avatars/gohan.jpeg") %>
-      <%= image_tag("avatars/goku.jpeg") %>
-      <%= image_tag("avatars/krillin.jpeg") %>
-      <%= image_tag("avatars/vegeta.png") %>
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
-  <%= render "devise/shared/links" %>
-</div>
-<%= render 'shared/background' %>
+<h2>Sign up</h2>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :pseudo,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "pseudo" }%>
+    <%= f.input :grade,
+                required: true,
+                autofocus: true,
+                collection: ["Caporale", "Sergent", "Adjudant", "Major", "Lieutenant", "Capitaine", "Colonel", "Général"],
+                input_html: { autocomplete: "grade" }%>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :avatar,
+                collection: [['Gohan', :gohan], ['Goku', :goku], ['Vegeta', :vegeta], ['Krillin', :krillin]],
+                as: :radio_buttons,
+                label: "Choisis un avatar parmi les suivants :",
+                input_html: { autocomplete: "avatar" },
+                required: true %>
+  </div>
+    <%= image_tag("avatars/gohan.jpeg") %>
+    <%= image_tag("avatars/goku.jpeg") %>
+    <%= image_tag("avatars/krillin.jpeg") %>
+    <%= image_tag("avatars/vegeta.png") %>
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>
+<%= render "devise/shared/links" %>
