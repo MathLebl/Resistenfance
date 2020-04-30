@@ -1,37 +1,37 @@
+<%= image_tag('folder.svg', class: 'folder') %>
+
 <!-- White card handling infos and avatar -->
-<div class="page">
-  <div class="infos-card">
-    <!-- avatar -->
-    <div class="big-avatar-container">
-      <div class="image">
-        <% if @user.avatar.nil? %>
-          <%= image_tag "avatars/krillin.jpeg", class: "big-avatar" %>
-        <% else %>
-          <%= image_tag "avatars/#{@user.avatar}.jpeg", class: "big-avatar" %>
-        <% end %>
-      </div>
+<div class="infos-card">
+  <!-- avatar -->
+  <div class="big-avatar-container">
+    <div class="image">
+      <% if @user.avatar.nil? %>
+        <%= image_tag "avatars/krillin.jpeg", class: "big-avatar" %>
+      <% else %>
+        <%= image_tag "avatars/#{@user.avatar}.jpeg", class: "big-avatar" %>
+      <% end %>
     </div>
-    <!-- container where user text infos are displayed -->
-    <div class="infos_container">
-      <div class="title">
-        <h2>Fiche du raizistant</h2>
-      </div>
+  </div>
+  <!-- container where user text infos are displayed -->
+  <div class="infos_container">
+    <div class="title">
+      <h2>Fiche du raizistant</h2>
+    </div>
 
-      <div class="username">
-        <h3><%= @user.pseudo %></h3>
-        <p><%= @user.grade %></p>
-      </div>
+    <div class="username">
+      <h3><%= @user.pseudo %></h3>
+      <p><%= @user.grade %></p>
+    </div>
 
-      <div class="user-mail">
-        <h4>Email</h4>
-        <p><%= @user.email %></p>
-      </div>
+    <div class="user-mail">
+      <h4>Email</h4>
+      <p><%= @user.email %></p>
+    </div>
 
-      <div class="text">
-        <p>phrase rigolote histoire de combler le vide et patati et patata
-          patati patata bla bla bla...
-        </p>
-      </div>
+    <div class="text">
+      <p>phrase rigolote histoire de combler le vide et patati et patata
+        patati patata bla bla bla...
+      </p>
     </div>
   </div>
 </div>
@@ -80,7 +80,3 @@
     </div>
   <% end %>
 </div>
-
-
-
-<%= render 'shared/background' %>
