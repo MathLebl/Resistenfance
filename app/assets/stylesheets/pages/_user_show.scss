@@ -1,5 +1,5 @@
 .infos-card {
-  width: 40%;
+  // width: 40%;
   background-color: white;
   border-radius: 1rem;
 
@@ -18,15 +18,18 @@
       margin-bottom: 0;
     }
   }
+}
 
   .infos_container {
-    margin-left: 20rem;
+    position: absolute;
+    top:0;
+    margin-top: 70%;
+    // margin-left: 20rem;
   }
-}
 
 .new-message {
   background-color: white;
-  width: 45%;
+  width: 100%;
   border-radius: 1rem;
   display: flex;
   margin-top: 1rem;
@@ -67,7 +70,7 @@
 .audio-card {
   margin-top: 1rem;
   background-color: white;
-  width: 45%;
+  width: 100%;
   border-radius: 1rem;
   display: flex;
 
@@ -122,7 +125,21 @@
 }
 
 .big-avatar {
-  width: 15rem;
-  border-radius: 0.5rem;
-  margin: 1rem;
+  // position
+  margin-top: 5%;
+  // display
+  width: 90%;
+  height: 75%;
+  border-radius: 2.5%;
+  object-fit: cover;
+}
+
+.audio-container{
+  margin-top: 20%;
+  grid-column-start: 2;
+}
+.user{
+  h4{
+    position: relative;
+  }
 }

@@ -1,84 +1,83 @@
-<div class="page">
-  <!-- White card handling infos and avatar -->
-  <div class="infos-card">
-    <!-- avatar -->
-    <div class="big-avatar-container">
-      <div class="image">
-        <% if @user.avatar.nil? %>
-          <%= image_tag "avatars/krillin.jpeg", class: "big-avatar" %>
-        <% else %>
-          <%= image_tag "avatars/#{@user.avatar}.jpeg", class: "big-avatar" %>
-        <% end %>
-      </div>
-    </div>
-    <!-- container where user text infos are displayed -->
-    <div class="infos_container">
-      <div class="title">
-        <h2>Fiche du raizistant</h2>
-      </div>
-
-      <div class="username">
-        <h3><%= @user.pseudo %></h3>
-        <p><%= @user.grade %></p>
-      </div>
-
-      <div class="user-mail">
-        <h4>Email</h4>
-        <p><%= @user.email %></p>
-      </div>
-
-      <div class="text">
-        <p>phrase rigolote histoire de combler le vide et patati et patata
-          patati patata bla bla bla...
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- add audio message card -->
-<div class="new-message">
-  <!-- text -->
-  <div class="mes-messages">
-    <h2>Mes messages</h2>
-    <p>Les discours que tu as fait</p>
-  </div>
-  <!-- link to aduio messages new -->
-  <div class="add-audio-message">
-    <%= link_to "Ajouter un nouveau message", new_audio_message_path %>
-  </div>
-</div>
-
-<!-- audio messages cards -->
-<div class="audio-cards">
-  <% @audio_messages.each do |audio_message| %>
-    <div class="audio-card">
+<div class="page-container">
+  <div class="page user">
+    <!-- White card handling infos and avatar -->
       <!-- avatar -->
-      <div class="image">
-        <% if @user.avatar.nil? %>
-          <%= image_tag "avatars/krillin.jpeg", class: "little-avatar" %>
-        <% else %>
-          <%= image_tag "avatars/#{@user.avatar}.jpeg", class: "little-avatar" %>
-        <% end %>
+      <div class="video-container">
+          <% if @user.avatar.nil? %>
+            <%= image_tag "avatars/krillin.jpeg", class: "big-avatar" %>
+          <% else %>
+            <%= image_tag "avatars/#{@user.avatar}.jpeg", class: "big-avatar" %>
+          <% end %>
       </div>
-      <!-- user pseudo & audio container -->
-      <div class="pseudo-and-audio">
-        <!-- user infos -->
+      <!-- container where user text infos are displayed -->
+      <div class="infos_container">
+        <div class="title">
+          <h4>Fiche du raizistant</h4>
+        </div>
+
         <div class="username">
-          <h3><%= @user.pseudo %></h3>
+          <h4><%= @user.pseudo %></h4>
           <p><%= @user.grade %></p>
         </div>
-        <!-- audio message -->
-        <div class="player">
-          <% if audio_message.audio_file.attached? == false %>
-            <p>Pas d'audio</p>
-          <% else %>
-            <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
-          <% end %>
+
+        <div class="user-mail">
+          <h4>Email</h4>
+          <p><%= @user.email %></p>
+        </div>
+
+        <div class="text">
+          <p>phrase rigolote histoire de combler le vide et patati et patata
+            patati patata bla bla bla...
+          </p>
         </div>
       </div>
+  </div>
+  <div class="audio-container">
+  <!-- add audio message card -->
+  <div class="new-message">
+    <!-- text -->
+    <div class="mes-messages">
+      <h2>Mes messages</h2>
+      <p>Les discours que tu as fait</p>
     </div>
-  <% end %>
+    <!-- link to aduio messages new -->
+    <div class="add-audio-message">
+      <%= link_to "Ajouter un nouveau message", new_audio_message_path %>
+    </div>
+  </div>
+  
+  <!-- audio messages cards -->
+  <div class="audio-cards">
+    <% @audio_messages.each do |audio_message| %>
+      <div class="audio-card">
+        <!-- avatar -->
+        <div class="image">
+          <% if @user.avatar.nil? %>
+            <%= image_tag "avatars/krillin.jpeg", class: "little-avatar" %>
+          <% else %>
+            <%= image_tag "avatars/#{@user.avatar}.jpeg", class: "little-avatar" %>
+          <% end %>
+        </div>
+        <!-- user pseudo & audio container -->
+        <div class="pseudo-and-audio">
+          <!-- user infos -->
+          <div class="username">
+            <h3><%= @user.pseudo %></h3>
+            <p><%= @user.grade %></p>
+          </div>
+          <!-- audio message -->
+          <div class="player">
+            <% if audio_message.audio_file.attached? == false %>
+              <p>Pas d'audio</p>
+            <% else %>
+              <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  </div>
 </div>
 
 
