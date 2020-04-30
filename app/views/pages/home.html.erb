@@ -1,20 +1,21 @@
 <!-- Foreground -->
-
 <!-- Video -->
 <div class="video-container">
     <iframe src="https://www.youtube.com/embed/X5B8k-TVX1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <!-- Page -->
+<div class="page-container">
 <div class="page">
-    <%= link_to 'LogOut provisoire', destroy_user_session_path, class: 'logout' %>
-    <h4>Réponds à l'appel du général Zoé</h4>
+        <%= link_to 'LogOut provisoire', destroy_user_session_path, class: 'logout' %>
+        <h4>Réponds à l'appel du général Zoé</h4>
 
-    <div class="links">
-        <%= link_to 'M\'engager dans la RésitEnfence', new_user_registration_path %>
-        <%= link_to 'Entrer dans le quartier général', new_user_session_path %>
-        <%= link_to 'Écouter Radio Centre Aéré', audio_messages_path %>
-    </div>
+        <div class="links">
+            <%= link_to 'M\'engager dans la RésitEnfence', new_user_registration_path %>
+            <%= link_to 'Entrer dans le QG', new_user_session_path %>
+            <%= link_to 'Écouter Radio Centre Aéré', audio_messages_path %>
+        </div>
+</div>
 </div>
 
 <!-- Background -->
