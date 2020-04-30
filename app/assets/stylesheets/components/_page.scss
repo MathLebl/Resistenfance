@@ -30,7 +30,6 @@
         // position
         position: absolute;
         top: 0;
-        padding-top: 75%;
         padding-left: 3rem;
         margin-bottom: 1em;
         // display
@@ -40,6 +39,12 @@
         // position
         padding-left: 3rem;
         // display
+        font-size: 1vw;
+    }
+    a{
+        // position
+        // position: absolute;
+        // dipslay
         font-size: 1vw;
     }
 }

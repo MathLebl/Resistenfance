@@ -1,3 +1,4 @@
+// messages
 .message-form {
     width: 40%;
     background-color: white;
@@ -29,3 +30,36 @@
     line-height: 1.25;
   }
   
+  // sign-in, sign-up
+  .sign-in-form, .sign-up-form{
+    position: absolute;
+    top: 0;
+    margin-top: 35%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    width: 100%;
+  }
+
+  .sign-in, .sign-up{
+    .links{
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 10%;
+        padding-left: 3rem;
+    }
+}
+ 
+.sign-up-form{
+  margin-top: 15%;
+}
+
+.sign-up{
+  h4{
+    padding-top: 8%;
+  }
+}
+.sign-in{
+  h4{
+    padding-top: 10%;
+  }
+}

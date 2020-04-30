@@ -1,8 +1,9 @@
-<div class="page">
-  <h2>Sign up</h2>
+<div class="page-container">
+<div class="page sign-up">
+  <h4>Sign up</h4>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
-    <div class="form-inputs">
+    <div class="form-inputs sign-up-form">
       <%= f.input :pseudo,
                   required: true,
                   autofocus: true,
@@ -38,8 +39,11 @@
       <%= f.button :submit, "Sign up" %>
     </div>
   <% end %>
+  <div class="links">
+  <%= render "devise/shared/links" %>
+  </div>
+</div>
 </div>
 
-<%= render "devise/shared/links" %>
 <!-- Background -->
 <%= render 'shared/background' %>
