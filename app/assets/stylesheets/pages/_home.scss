@@ -8,6 +8,7 @@
         text-decoration: none;
     }
     a{
+        // dipslay
         font-size: 1vw;
     }
     .links{
@@ -30,15 +31,18 @@
             text-decoration: none;
             // status
             &:hover{
+                // position
                 position: relative;
             }
             &:hover:after{
-                content: url('select-ellipse.svg');
-                display: block;
+                // position
                 position: absolute;
-                width: 10em;
                 top:-30%;
                 left: -10%;
+                // display
+                content: url('select-ellipse.svg');
+                display: block;
+                width: 10em;
             }
         }
     }
@@ -55,11 +59,9 @@
     display: flex;
     justify-content: center;
     width: 25vw;
-    max-width: 419px;
     height: 20vw;
+    max-width: 419px;
     max-height: 335px;
-    // height: 0; //50vw;
-    // padding-top: 320px / 400px * 100%;
     background-color: white;
     border-radius: 2.5%;
     box-shadow: 0px 0px 30px rgba(35, 42, 58, 0.20);
@@ -70,11 +72,11 @@
         // display
         width: 90%;
         height: 75%;
-        // padding-top: 240px / 360px * 100%;
         border-radius: 2.5%;
     }
 }
 
+// fix font-size for big screens
 @media (min-width: 1600px){
   .page{
     a{

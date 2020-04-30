@@ -1,48 +1,50 @@
-.test{
-    display: grid;
+.page-container{
+    // position
     position: absolute;
+    left: 50%;
+    transform: translateX(-45%);
+    // display
+    display: grid;
     height: 100vh;
     width: 67%;
     max-width: 1123px;
-    // margin: 0 0 0 20%;
-    left: 50%;
-    transform: translateX(-45%);
 
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: min-content;
     column-gap: 2%;
-
 }
 .page{
     // position
-    // display: block;
     position: relative;
     grid-column-start: 2;
-    // margin-left: 55%;
     top: 50vh;
     transform: translateY(-50%);
     // display
-    // width: 35vw;
-    height: 0; //50vw;
+    height: 0;
     padding-top: 800 / 560 * 100%;
     background-color: white;
     border-radius: 2.5%;
     color: $dark-grey;
     // children
     h4{
+        // position
         position: absolute;
         top: 0;
         padding-top: 75%;
         padding-left: 3rem;
         margin-bottom: 1em;
+        // display
         font-size: 1.5vw;
     }
     p{
+        // position
         padding-left: 3rem;
+        // display
         font-size: 1vw;
     }
 }
 
+// fix font-size for big screens
 @media (min-width: 1600px){
     .page{
         h4{
@@ -53,23 +55,3 @@
         }
     }  
   }
-
-
-
-
-
-// @media (min-width: 992px) and (max-width: 1200px){
-//     // .page{
-//     //     margin-left: 50%;
-//     //     width: 32em;
-//     //     height: 47em;
-//     // }
-// }
-
-// @media (min-width: 768px) and (max-width: 991px){
-
-// }
-
-// @media (max-width: 767px){
-
-// }
