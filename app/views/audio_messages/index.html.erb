@@ -35,7 +35,7 @@
           <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
           <% end %>
         </div>
-        <div id="comments-list" class="comments">
+        <div id="comments-list-<%= audio_message.id %>" class="comments-list">
           <% @comments.each do |comment| %>
           <% if comment.audio_message_id == audio_message.id %>
           <%= render "comments/comment", comment: comment, user: comment.user %>
