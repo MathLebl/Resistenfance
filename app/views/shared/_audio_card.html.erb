@@ -23,21 +23,21 @@
           <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
         <% end %>
       </div>
-      <div class="audio-message-comments">
-        <div id="comments-list">
-          <% @comments.each do |comment| %>
-            <% if comment.audio_message_id == audio_message.id %>
-              <%= render "comments/comment", comment: comment, user: comment.user %>
+        <div class="audio-message-comments">
+          <div id="comments-list-<%= audio_message.id %>" class="comments-list">
+            <% @comments.each do |comment| %>
+              <% if comment.audio_message_id == audio_message.id %>
+                <%= render "comments/comment", comment: comment, user: comment.user %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
+          <div class="message-form">
+            <form class="search-form f<%= audio_message.id %>" data-audio-message-id="<%= audio_message.id %>">
+              <input class="form" type="text" placeholder="Donnes tes impressions sur le message audio !" aria-label="Commentaire">
+              <input type="submit" value="Oui chef !" class="submit-button">
+            </form>
+          </div>
         </div>
-        <div class="message-form">
-          <form id="search-form" class="">
-            <input id="form" class="" type="text" placeholder="Donnes tes impressions sur le message audio !" aria-label="Commentaire">
-            <input type="submit" value="Oui chef !" class="submit-button">
-          </form>
-        </div>
-      </div>
     </div>
   </div>
 <% end %>
