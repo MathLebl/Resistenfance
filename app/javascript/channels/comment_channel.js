@@ -1,12 +1,13 @@
 import consumer from "./consumer"
 
-const commentsContainer = document.getElementById('comments-list')
+const commentsContainer = document.getElementsByClassName('comments-list')
 
 if (commentsContainer) {
   consumer.subscriptions.create({ channel: 'CommentChannel' }, {
     received(data) {
-      // console.log(data);
-      commentsContainer.insertAdjacentHTML('beforeend', data);
+      console.log(data);
+      const commentContainer = document.getElementById(`comments-list-${data.audioMessageId}`)
+      commentContainer.insertAdjacentHTML('beforeend', data.message);
     }
   })
 }

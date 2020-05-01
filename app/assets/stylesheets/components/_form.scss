@@ -5,7 +5,7 @@
     margin: auto;
   }
 
-  #search-form {
+  .search-form {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -20,7 +20,7 @@
     }
   }
 
-  #form {
+  .form {
     width: 70%;
     border-radius: 0.25rem;
     line-height: 1.25;
