@@ -1,43 +1,41 @@
 <% @audio_messages.each do |audio_message| %>
-  <div class="audio-cards">
-    <div class="audio-card">
-      <div class="audio-card-avatar">
-        <% if audio_message.user.avatar.nil? %>
-          <%= image_tag "avatars/krillin.jpeg" %>
+  <div class="audio-card">
+    <div class="audio-card-avatar">
+      <% if audio_message.user.avatar.nil? %>
+        <%= image_tag "avatars/krillin.jpeg" %>
+      <% else %>
+        <%= image_tag "avatars/#{audio_message.user.avatar}.jpeg" %>
+      <% end %>
+    </div>
+    <div class="audio-card-body">
+      <div class="identity">
+        <h4 class="pseudo">
+          <%= link_to audio_message.user.pseudo, resistenfant_path(audio_message.user.id), class: "user-link" %>
+        </h4>
+        <h6 class="grade">
+          <%= audio_message.user.grade %>
+        </h6>
+      </div>
+      <div class="player">
+        <% if audio_message.audio_file.attached? == false %>
+          <p>Pas d'audio</p>
         <% else %>
-          <%= image_tag "avatars/#{audio_message.user.avatar}.jpeg" %>
+          <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
         <% end %>
       </div>
-      <div class="audio-card-body">
-        <div class="identity">
-          <h4 class="pseudo">
-            <%= link_to audio_message.user.pseudo, resistenfant_path(audio_message.user.id), class: "user-link" %>
-          </h4>
-          <h6 class="grade">
-            <%= audio_message.user.grade %>
-          </h6>
-        </div>
-        <div class="player">
-          <% if audio_message.audio_file.attached? == false %>
-            <p>Pas d'audio</p>
-          <% else %>
-            <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
+      <div class="audio-message-comments">
+        <div id="comments-list">
+          <% @comments.each do |comment| %>
+            <% if comment.audio_message_id == audio_message.id %>
+              <%= render "comments/comment", comment: comment, user: comment.user %>
+            <% end %>
           <% end %>
         </div>
-        <div class="audio-message-comments">
-          <div id="comments-list">
-            <% @comments.each do |comment| %>
-              <% if comment.audio_message_id == audio_message.id %>
-                <%= render "comments/comment", comment: comment, user: comment.user %>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="message-form">
-            <form id="search-form" class="">
-              <input id="form" class="" type="text" placeholder="Donnes tes impressions sur le message audio !" aria-label="Commentaire">
-              <input type="submit" value="Oui chef !" class="submit-button">
-            </form>
-          </div>
+        <div class="message-form">
+          <form id="search-form" class="">
+            <input id="form" class="" type="text" placeholder="Donnes tes impressions sur le message audio !" aria-label="Commentaire">
+            <input type="submit" value="Oui chef !" class="submit-button">
+          </form>
         </div>
       </div>
     </div>

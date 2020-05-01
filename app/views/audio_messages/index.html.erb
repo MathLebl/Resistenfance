@@ -7,13 +7,13 @@
       <h2>Radio Centre Aéré</h2>
       <h6>Les discours des membres de la résistance</h6>
     </div>
-    <% if @audio_messages.empty? %>
-    <div>
-      <h2>Pas de messages publiés!</h2>
+    <div class="audio-cards">
+      <% if @audio_messages.empty? %>
+        <h2>Pas de messages publiés!</h2>
+      <% else %>
+        <%= render 'shared/audio_card' %>
+      <% end %>
     </div>
-    <% else %>
-    <%= render 'shared/audio_card' %>
-    <% end %>
   </div>
 </div>
 
