@@ -1,20 +1,17 @@
 // messages
 .message-form {
-    width: 40%;
+    display: inline;
     background-color: white;
-    padding: 1rem;
     margin: auto;
   }
-  
+
   #search-form {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     align-items: center;
-  
+
     .submit-button {
-      margin-top: 0.75rem;
-      padding: 0.5rem 1rem;
-      width: 33.333%;
+      width: 30%;
       border-radius: 0.25rem;
       transition-duration: 0.25s;
     }
@@ -22,14 +19,13 @@
       background-color: #3182ce;
     }
   }
-  
+
   #form {
-    padding: 0.75rem 0.5rem;
-    width: 100%;
+    width: 70%;
     border-radius: 0.25rem;
     line-height: 1.25;
   }
-  
+
   // sign-in, sign-up
   .sign-in-form, .sign-up-form{
     position: absolute;
@@ -48,7 +44,7 @@
         padding-left: 3rem;
     }
 }
- 
+
 .sign-up-form{
   margin-top: 15%;
 }
