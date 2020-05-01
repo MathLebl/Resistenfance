@@ -25,7 +25,7 @@
           <% end %>
         </div>
         <div class="audio-message-comments">
-          <div id="comments-list">
+          <div id="comments-list-<%= audio_message.id %>" class="comments-list">
             <% @comments.each do |comment| %>
               <% if comment.audio_message_id == audio_message.id %>
                 <%= render "comments/comment", comment: comment, user: comment.user %>
