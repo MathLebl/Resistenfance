@@ -44,8 +44,38 @@
         margin-top: 35px;
       }
     }
-    .audio-message-comments {
-      display: none;
-    }
   }
+}
+
+.audio-message-comments {
+  background-color: #C4C4C4;
+  padding: 15px;
+  border-radius: 20px;
+  .comment-card {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    margin: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    .comment-card-avatar {
+      padding: 8px;
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+      }
+    }
+    .comment-card-body {
+      padding: 8px;
+      .comment-pseudo h5 {
+        color: black;
+        margin: 0px;
+      }
+    }
+}
+}
+
+.user-link {
+  color: $black;
 }
