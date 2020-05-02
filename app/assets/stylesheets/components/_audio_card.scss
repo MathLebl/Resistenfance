@@ -5,6 +5,8 @@
   width: 90%;
   height: 180px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 40px;
+  position:relative;
   .audio-card-avatar {
     width: 25%;
     padding: 15px;
@@ -46,12 +48,42 @@
     }
   }
 }
+.audio-card .audio-card-body .comments-btn {
+  font-weight: bold;
+  background-color:transparent;
+  display:flex;
+  cursor:pointer;
+  color:#ffffff;
+  text-decoration:none;
+  text-shadow:0px 0px 3px #2f6627;
+  width: 25%;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  right: 0px;
+  border: none;
+  bottom: -23px;
+  p{
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+  }
+  i {
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+.audio-card .audio-card-body .comments-btn:focus {
+  outline: none;
+}
 
 .audio-message-comments {
   display:none;
   background-color: #C4C4C4;
   padding: 15px;
   border-radius: 20px;
+
   .comment-card {
     display: flex;
     background-color: white;
@@ -74,7 +106,7 @@
         margin: 0px;
       }
     }
-}
+  }
 }
 
 .user-link {

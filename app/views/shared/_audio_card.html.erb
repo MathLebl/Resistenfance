@@ -23,8 +23,11 @@
           <%= audio_tag rails_blob_path(audio_message.audio_file), controls: true %>
         <% end %>
       </div>
+      <button class="comments-btn">
+        commentaires
+        <i class="far fa-eye"></i>
+      </button>
     </div>
-    <buton class="btn btn-danger">Com</buton>
   </div>
   <div class="audio-message-comments">
     <div id="comments-list-<%= audio_message.id %>" class="comments-list">

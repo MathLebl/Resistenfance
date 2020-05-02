@@ -5,7 +5,7 @@ require("channels")
 import "bootstrap";
 
 // Add toggle effet to Comments
-const btn = document.querySelector('buton')
+const btn = document.querySelector('.comments-btn')
 
 const commentsBlock = document.querySelector('.audio-message-comments')
 
