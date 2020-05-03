@@ -46,44 +46,43 @@
         margin-top: 35px;
       }
     }
+    .comments-btn {
+      font-weight: bold;
+      background-color:transparent;
+      display:flex;
+      cursor:pointer;
+      color:#ffffff;
+      text-decoration:none;
+      text-shadow:0px 0px 3px #2f6627;
+      width: 25%;
+      align-items: center;
+      justify-content: space-around;
+      position: absolute;
+      right: 0px;
+      border: none;
+      bottom: -23px;
+      p{
+        text-decoration: none;
+        padding: 0px;
+        margin: 0px;
+      }
+      i {
+        text-decoration: none;
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+    .comments-btn:focus {
+      outline: none;
+    }
   }
 }
-.audio-card .audio-card-body .comments-btn {
-  font-weight: bold;
-  background-color:transparent;
-  display:flex;
-  cursor:pointer;
-  color:#ffffff;
-  text-decoration:none;
-  text-shadow:0px 0px 3px #2f6627;
-  width: 25%;
-  align-items: center;
-  justify-content: space-around;
-  position: absolute;
-  right: 0px;
-  border: none;
-  bottom: -23px;
-  p{
-    text-decoration: none;
-    padding: 0px;
-    margin: 0px;
-  }
-  i {
-    text-decoration: none;
-    padding: 0px;
-    margin: 0px;
-  }
-}
-.audio-card .audio-card-body .comments-btn:focus {
-  outline: none;
-}
-
-.audio-message-comments {
+.audio-card-comments {
   display:none;
   background-color: #C4C4C4;
   padding: 15px;
+  padding-top: 80px;
   border-radius: 20px;
-
   .comment-card {
     display: flex;
     background-color: white;
@@ -108,11 +107,10 @@
     }
   }
 }
-
+.audio-card-comments.is-visible {
+    display: block;
+  }
 .user-link {
   color: $black;
 }
 
-.audio-message-comments.is-visible {
-    display: block;
-  }
