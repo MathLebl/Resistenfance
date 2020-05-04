@@ -1,4 +1,16 @@
-<div class="comment">
-  <p><%= link_to comment.user.pseudo, resistenfant_path(user.id), class: "user-link" %></p>
-  <p style="border-bottom: 1px solid white"><%= comment.message %></p>
+<!-- Template de Card pour les commentaires des audios -->
+<div class="comment-card">
+  <div class="comment-card-avatar">
+    <% if comment.user.avatar.nil? %>
+      <%= image_tag "avatars/krillin.jpeg" %>
+    <% else %>
+      <%= image_tag "avatars/#{comment.user.avatar}.jpeg" %>
+    <% end %>
+  </div>
+  <div class="comment-card-body">
+    <h5 class="comment-pseudo">
+      <%= link_to comment.user.pseudo, resistenfant_path(comment.user.id), class: "user-link" %>
+    </h5>
+    <p><%= comment.message %></p>
+  </div>
 </div>
